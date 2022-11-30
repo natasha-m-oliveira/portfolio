@@ -15,7 +15,9 @@ export function SwitchTheme() {
 
   useEffect(() => {
     const userTheme = localStorage.getItem('@portfolio:theme-1.0.0')
-    setTheme(userTheme || 'dark')
+    if (userTheme) {
+      setTheme(userTheme)
+    }
   }, [])
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function SwitchTheme() {
 
   return (
     <button
-      className="dark:text-white hover:text-violet-400 transition-colors"
+      className="text-slate-600 dark:text-slate-200 hover:!text-violet-400 transition-colors"
       onClick={handleChangeTheme}
     >
       {theme === 'dark' ? (

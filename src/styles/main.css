@@ -1,3 +1,28 @@
 @tailwind base;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-theme);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 10px;
+  border: 3px solid var(--bg-theme);
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 @tailwind components;
 @tailwind utilities;
