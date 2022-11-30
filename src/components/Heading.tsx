@@ -29,7 +29,7 @@ export function Heading({
           'after:w-48 after:h-[1px] after:bg-slate-500 after:ml-5': fieldset,
         },
         {
-          'text-xl': size === 'sm',
+          'text-lg': size === 'sm',
           'text-2xl': size === 'md',
           'text-5xl': size === 'lg',
         },
