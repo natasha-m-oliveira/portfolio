@@ -1,10 +1,28 @@
+import { useEffect, useRef } from 'react'
 import { Button } from '../../../components/Button'
 import { Heading } from '../../../components/Heading'
 import { Text } from '../../../components/Text'
+import { config } from '../../../config'
+import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
+import { sr } from '../../../utils/sr'
 
 export function Introduction() {
+  const revealContainer = useRef<HTMLSelectElement>(null)
+
+  const prefersReducedMotion = usePrefersReducedMotion()
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return
+    }
+
+    if (revealContainer.current && sr) {
+      sr.reveal(revealContainer.current, config.srConfig())
+    }
+  }, [prefersReducedMotion])
+
   return (
-    <div className="min-h-[85vh] scroll-mt-16" id="home">
+    <section className="section" id="home" ref={revealContainer}>
       <Text className="!text-violet-400" size="lg">
         Olá, me chamo
       </Text>
@@ -28,6 +46,6 @@ export function Introduction() {
       <Button variant="outline" className="w-max">
         Currículo
       </Button>
-    </div>
+    </section>
   )
 }

@@ -1,17 +1,35 @@
 import classNames from 'classnames'
 import { Play } from 'phosphor-react'
+import { useEffect, useRef } from 'react'
 import { Heading } from '../../../components/Heading'
 import { Text } from '../../../components/Text'
+import { config } from '../../../config'
+import { sr } from '../../../utils/sr'
+import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
 
 export function About() {
+  const revealContainer = useRef<HTMLSelectElement>(null)
+
+  const prefersReducedMotion = usePrefersReducedMotion()
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return
+    }
+
+    if (revealContainer.current && sr) {
+      sr.reveal(revealContainer.current, config.srConfig())
+    }
+  }, [prefersReducedMotion])
+
   return (
-    <div className="dark:text-slate-100 min-h-screen scroll-mt-12" id="about">
+    <section className="section" id="about" ref={revealContainer}>
       <Heading fieldset className="mb-6">
         Sobre mim
       </Heading>
 
-      <div className="grid grid-cols-[3fr_minmax(300px,_2fr)] gap-12">
-        <div className="flex flex-col gap-3">
+      <div className="flex gap-8 max-md:flex-col max-md:items-center">
+        <div className="flex-1 flex flex-col gap-3">
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
             laborum veritatis illo error facilis corporis, reprehenderit minus
@@ -52,19 +70,19 @@ export function About() {
 
         <div
           className={classNames(
-            'relative h-min',
+            'relative h-min max-w-xs m-8',
             'after:absolute after:w-full after:h-full after:border-2 after:border-violet-400 after:top-5 after:left-5 after:-z-10 after:transition-all',
             'hover:after:top-3 hover:after:left-3',
             'group',
           )}
         >
           <img
-            src="https://github.com/natasha-m-oliveira.png"
-            alt=""
+            src={`${config.socialMedia[0].url}.png`}
+            alt="Self"
             className="max-w-full object-cover [filter:grayscale(100%)_contrast(1)] group-hover:filter-none transition-all"
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -1,19 +1,24 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { Slot } from '@radix-ui/react-slot'
 import classNames from 'classnames'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
+  asChild?: boolean
   variant?: 'primary' | 'outline'
 }
 
 export function Button({
   children,
+  asChild = false,
   className,
   variant = 'primary',
   ...rest
 }: ButtonProps) {
+  const Comp = asChild ? Slot : 'button'
+
   return (
-    <button
+    <Comp
       className={classNames(
         className,
         {
@@ -27,6 +32,6 @@ export function Button({
       {...rest}
     >
       {children}
-    </button>
+    </Comp>
   )
 }
