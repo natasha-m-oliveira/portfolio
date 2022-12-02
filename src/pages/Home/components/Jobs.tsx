@@ -1,6 +1,5 @@
 import * as Tabs from '@radix-ui/react-tabs'
 import classNames from 'classnames'
-import moment from 'moment'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import { format } from 'date-fns'
@@ -11,42 +10,7 @@ import { Text } from '../../../components/Text'
 import { sr } from '../../../utils/sr'
 import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
 import { config } from '../../../config'
-
-const jobs = [
-  {
-    id: 'Uninove',
-    career: 'Full Stack Developer',
-    company: {
-      name: 'Uninove',
-      link: 'http://uninove.com.br/',
-    },
-    startDate: '03-01-2022',
-    endDate: 'presente',
-    description: [
-      'Manutenção e desenvolvimento de novas funcionalidades de um ERP com Laravel e Vue.js;',
-      "Desenvolvimento e consumo de API's",
-      'Manutenção e desenvolvimento de aplicações Web',
-    ],
-  },
-  {
-    id: 'Eniac',
-    career: 'Analista de sistemas júnior',
-    company: {
-      name: 'Centro Universitário Eniac',
-      link: 'http://www.eniac.com.br/',
-    },
-    startDate: '04-01-2018',
-    endDate: '03-01-2022',
-    description: [
-      'Levantamento de requisitos técnicos e funcionais',
-      'Elaboração de especificações técnicas',
-      "Desenvolvimento de API's",
-      "Integração do backend com API's de terceiros",
-    ],
-  },
-]
-
-const list = jobs.map(({ id }) => id)
+import jobs from '../../../content/jobs.json'
 
 export function Jobs() {
   const revealContainer = useRef<HTMLSelectElement>(null)
@@ -56,7 +20,7 @@ export function Jobs() {
   const [tabIndex, setTabIndex] = useState(0)
 
   function dateFormat(date: string) {
-    const isValidDate = moment(date).isValid()
+    const isValidDate = new RegExp(config.dateRegex).test(date)
     if (isValidDate) {
       return format(new Date(date), "MMM 'de' yyyy", { locale: ptBR })
     }
@@ -98,10 +62,10 @@ export function Jobs() {
             'max-sm:after:w-[120px] max-sm:after:h-[2px] max-sm:after:bottom-0 max-sm:after:top-auto max-sm:after:translate-y-0 max-sm:after:translate-x-[var(--high-light)]',
           )}
         >
-          {list.map((company, index) => (
+          {jobs.map(({ id }, index) => (
             <Tabs.Trigger
-              key={`trigger_${company}`}
-              value={company}
+              key={`trigger_${id}`}
+              value={id}
               className={classNames(
                 'min-w-[120px] hover:bg-slate-300 dark:hover:bg-slate-800 hover:text-violet-500',
                 "text-left text-slate-400 px-4 py-3 border-l-[3px] border-slate-400 dark:border-slate-500 data-[state='active']:!text-violet-400 transition-colors",
@@ -109,7 +73,7 @@ export function Jobs() {
               )}
               tabIndex={index}
             >
-              {company}
+              {id}
             </Tabs.Trigger>
           ))}
         </Tabs.List>

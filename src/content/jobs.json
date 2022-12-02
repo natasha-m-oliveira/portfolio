@@ -1,0 +1,33 @@
+[
+  {
+    "id": "Uninove",
+    "career": "Full Stack Developer",
+    "company": {
+      "name": "Uninove",
+      "link": "http://uninove.com.br/"
+    },
+    "startDate": "03/01/2022",
+    "endDate": "presente",
+    "description": [
+      "Manutenção e desenvolvimento de novas funcionalidades de um ERP com Laravel e Vue.js;",
+      "Desenvolvimento e consumo de API's",
+      "Manutenção e desenvolvimento de aplicações Web"
+    ]
+  },
+  {
+    "id": "Eniac",
+    "career": "Analista de sistemas júnior",
+    "company": {
+      "name": "Centro Universitário Eniac",
+      "link": "http://www.eniac.com.br/"
+    },
+    "startDate": "04/01/2018",
+    "endDate": "03/01/2022",
+    "description": [
+      "Levantamento de requisitos técnicos e funcionais",
+      "Elaboração de especificações técnicas",
+      "Desenvolvimento de API's",
+      "Integração do backend com API's de terceiros"
+    ]
+  }
+]

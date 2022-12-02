@@ -78,4 +78,6 @@ export const config = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
+
+  dateRegex: '^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$',
 }

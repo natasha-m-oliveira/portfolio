@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { About } from './components/About'
 import { Jobs } from './components/Jobs'
 import { Introduction } from './components/Introduction'
-import { Projects } from './components/Projects'
+import { Works } from './components/Works'
 import { Thank } from './components/Thank'
 
 export function Home() {
@@ -13,7 +13,7 @@ export function Home() {
         <Introduction />
         <About />
         <Jobs />
-        <Projects />
+        <Works />
         <Thank />
       </div>
     </div>

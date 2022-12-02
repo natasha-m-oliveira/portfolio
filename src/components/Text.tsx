@@ -25,7 +25,7 @@ export function Text({
         className,
         'flex items-center gap-2 text-slate-600 dark:text-slate-400 font-sans text-justify',
         {
-          'text-xs': size === 'sm',
+          'text-sm': size === 'sm',
           'text-md': size === 'md',
           'text-lg': size === 'lg',
         },

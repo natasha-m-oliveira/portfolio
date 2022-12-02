@@ -4,6 +4,7 @@ import { SocialMedia } from './SocialMedia'
 import { SwitchTheme } from './SwitchTheme'
 import { Text } from './Text'
 import { config } from '../config'
+import classNames from 'classnames'
 
 export function Header() {
   return (
@@ -26,7 +27,12 @@ export function Header() {
         </Text>
       </SideDivider>
 
-      <nav className="max-w-xs z-10 py-3 px-4 fixed bottom-6 left-0 right-0 mx-auto flex justify-around items-center gap-4 rounded-full bg-slate-300 dark:bg-slate-800 dark:text-slate-200">
+      <nav
+        className={classNames(
+          'max-w-xs z-10 py-3 px-4 fixed bottom-6 left-0 right-0 mx-auto flex justify-around items-center gap-4 rounded-full',
+          'bg-slate-300 dark:bg-slate-700 dark:text-slate-200',
+        )}
+      >
         {config.navLinks.map(({ id, url, icon, name }) => {
           const Comp = icon
           return (
