@@ -28,7 +28,7 @@ html {
 
 @layer utilities {
   .section {
-    @apply min-h-[85vh] scroll-m-12;
+    @apply min-h-[70vh] scroll-m-12;
   }
 }
 

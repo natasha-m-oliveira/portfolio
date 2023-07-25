@@ -1,5 +1,40 @@
 [
   {
+    "id": "Radek",
+    "career": "Full Stack Developer",
+    "company": {
+      "name": "Radek Systems",
+      "link": "https://radek.com.br/"
+    },
+    "startDate": "05/08/2023",
+    "endDate": "Presente",
+    "description": [
+      "Planejamento e projeção da arquitetura de software do sistema, definição da estrutura do banco de dados, escolha das tecnologias a serem utilizadas e documentação do projeto",
+      "Criação de interfaces de usuário interativas e responsivas de acordo com o protótipo fornecido pela equipe de Product Owners e Designers",
+      "Criação da lógica de negócios, manipulação de dados e integração de serviços",
+      "Criação de testes de unidade, integração e e2e",
+      "Condução de revisão de código em implementações de outros devs"
+    ]
+  },
+  {
+    "id": "CITeB",
+    "career": "Full Stack Developer",
+    "company": {
+      "name": "Fundação CITeB",
+      "link": "https://www.citebonline.com.br/"
+    },
+    "startDate": "01/02/2023",
+    "endDate": "05/05/2023",
+    "description": [
+      "Criação de componentes web otimizados e responsivos, landing pages e aplicações web",
+      "Criação de testes de unidade, integração e e2e",
+      "Participação no planejamento e refinamento de novas versões de produtos",
+      "Desenvolvimento de APIs funcionais e escaláveis",
+      "Elaboração de documentos técnicos",
+      "Condução de revisão de código em implementações de outros devs"
+    ]
+  },
+  {
     "id": "Uninove",
     "career": "Full Stack Developer",
     "company": {
@@ -7,9 +42,9 @@
       "link": "http://uninove.com.br/"
     },
     "startDate": "03/01/2022",
-    "endDate": "presente",
+    "endDate": "12/23/2022",
     "description": [
-      "Manutenção e desenvolvimento de novas funcionalidades de um ERP com Laravel e Vue.js;",
+      "Manutenção e desenvolvimento de novas funcionalidades de um ERP com Laravel e Vue.js",
       "Desenvolvimento e consumo de API's",
       "Manutenção e desenvolvimento de aplicações Web"
     ]

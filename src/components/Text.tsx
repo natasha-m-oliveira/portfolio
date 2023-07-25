@@ -1,12 +1,11 @@
 import { Slot } from '@radix-ui/react-slot'
 
 import classNames from 'classnames'
-import { HTMLAttributes, ReactNode } from 'react'
+import { HTMLAttributes } from 'react'
 
 export interface TextProps extends HTMLAttributes<HTMLDivElement> {
   size?: 'sm' | 'md' | 'lg'
   color?: string
-  children: ReactNode
   asChild?: boolean
 }
 

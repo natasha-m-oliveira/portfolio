@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 import { Button } from '../../../components/Button'
 import { Heading } from '../../../components/Heading'
 import { Text } from '../../../components/Text'
@@ -34,17 +35,18 @@ export function Introduction() {
         </Heading>
       </div>
 
-      <Text className="max-w-lg my-10" asChild size="lg">
+      <Text className="max-w-lg my-10" size="lg" asChild>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-          nostrum at cumque deleniti illum, vitae, voluptatum ducimus voluptate
-          impedit neque, ad nam. Voluptatem ad iure unde pariatur voluptatum
-          obcaecati rem.
+          Sou uma desenvolvedora full stack com experiência em desenvolvimento
+          de APIs e microsserviços funcionais e escaláveis e criação de
+          componentes web otimizados e responsivos. Atualmente estou me
+          especializado em arquitetura de software e boas práticas de
+          desenvolvimento.
         </p>
       </Text>
 
-      <Button variant="outline" className="w-max">
-        Currículo
+      <Button variant="outline" className="w-max" asChild>
+        <Link to="#about">Saiba mais</Link>
       </Button>
     </section>
   )

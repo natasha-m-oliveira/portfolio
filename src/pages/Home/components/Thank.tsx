@@ -22,17 +22,16 @@ export function Thank() {
 
   return (
     <section
-      className="section flex flex-col gap-8"
+      className="section flex flex-col gap-8 max-sm:min-h-[85vh]"
       id="thank"
       ref={revealContainer}
     >
       <div>
-        <Heading className="!justify-center">Obrigada.</Heading>
+        <Heading className="!justify-center">Obrigada pelo apaio.</Heading>
         <Text className="mt-6 max-w-md mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-          quae nobis sapiente dolorem esse impedit perspiciatis itaque incidunt
-          reprehenderit architecto nesciunt assumenda ipsam dignissimos, in
-          autem ab, iure officia recusandae.
+          “Qualquer um pode escrever um código que o computador entenda. Bons
+          programadores escrevem códigos que os humanos entendam.” – Martin
+          Fowler
         </Text>
       </div>
       <div className="mb-4 self-end">
@@ -47,7 +46,13 @@ export function Thank() {
         <Text>
           Inspired by
           <Text asChild className="hover:!text-violet-400">
-            <a href="https://github.com/bchiang7">Brittany Chiang</a>
+            <a
+              href="https://github.com/bchiang7"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Brittany Chiang
+            </a>
           </Text>
         </Text>
       </div>

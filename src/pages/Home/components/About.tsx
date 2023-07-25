@@ -30,22 +30,38 @@ export function About() {
 
       <div className="flex gap-8 max-md:flex-col max-md:items-center">
         <div className="flex-1 flex flex-col gap-3">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-            laborum veritatis illo error facilis corporis, reprehenderit minus
-            magni quos, voluptates neque. Esse assumenda blanditiis possimus
-            nobis provident tenetur quam consequuntur?
+          <Text className="!block">
+            Era uma vez... Meu interesse em desenvolvimento de software começou
+            em 2019 enquanto eu ainda trabalhava como consultora back office no{' '}
+            <a
+              href="http://www.eniac.com.br/"
+              className=" !text-violet-400 relative after:h-[1px] after:w-0 after:absolute after:left-0 after:bottom-[1px] after:bg-violet-400 hover:after:w-full after:transition-[width]"
+            >
+              Centro Universitário Eniac
+            </a>{' '}
+            e criava os meus primeiros scripts para automação de tarefas
+            utilizando as ferramentas do Google G Suite.
           </Text>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore,
-            ad nulla necessitatibus consequatur laudantium doloremque, quae
-            aperiam quos placeat excepturi dolorem tenetur atque ea modi sint
-            cumque non molestiae? Architecto!
+            Encantada em como a tecnologia poderia melhorar a vida das pessoas,
+            eu comecei a graduação de Análise e Desenvolvimento de Sistemas, não
+            foi algo fácil pois me faltavam muitas bases. Mas com muito empenho
+            me graduei em 2022 e conquistei a minha tão sonhada primeira vaga.
+          </Text>
+          <Text className="!block">
+            Avançando para os dias atuais, meu foco principal é criar APIs e
+            microsserviços funcionais e escaláveis na{' '}
+            <a
+              href="https://radek.com.br/"
+              className=" !text-violet-400 relative after:h-[1px] after:w-0 after:absolute after:left-0 after:bottom-[1px] after:bg-violet-400 hover:after:w-full after:transition-[width]"
+            >
+              Radek Systems
+            </a>
+            .
           </Text>
           <Text>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor nemo
-            deserunt voluptatibus incidunt harum exercitationem doloremque odit
-            ipsum quo
+            Aqui estão algumas tecnologias com as quais tenho trabalhado
+            recentemente:
           </Text>
 
           <div className="w-max mt-4 grid grid-rows-3 grid-flow-col gap-x-8">
@@ -55,7 +71,7 @@ export function About() {
             </Text>
             <Text>
               <Play size={8} weight="fill" className="text-violet-400" />
-              React
+              Next.js
             </Text>
             <Text>
               <Play size={8} weight="fill" className="text-violet-400" />
@@ -64,6 +80,10 @@ export function About() {
             <Text>
               <Play size={8} weight="fill" className="text-violet-400" />
               TypeScript
+            </Text>
+            <Text>
+              <Play size={8} weight="fill" className="text-violet-400" />
+              NestJS
             </Text>
           </div>
         </div>

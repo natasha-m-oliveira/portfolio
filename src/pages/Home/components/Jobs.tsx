@@ -4,7 +4,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 
 import { format } from 'date-fns'
 import { Play } from 'phosphor-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Heading } from '../../../components/Heading'
 import { Text } from '../../../components/Text'
 import { sr } from '../../../utils/sr'
@@ -17,19 +17,12 @@ export function Jobs() {
 
   const prefersReducedMotion = usePrefersReducedMotion()
 
-  const [tabIndex, setTabIndex] = useState(0)
-
   function dateFormat(date: string) {
     const isValidDate = new RegExp(config.dateRegex).test(date)
     if (isValidDate) {
       return format(new Date(date), "MMM 'de' yyyy", { locale: ptBR })
     }
     return date
-  }
-
-  function handleChange(id: string) {
-    const index = jobs.findIndex((item) => item.id === id)
-    setTabIndex(index)
   }
 
   useEffect(() => {
@@ -50,17 +43,11 @@ export function Jobs() {
 
       <Tabs.Root
         className="flex gap-6 max-sm:flex-col"
-        onValueChange={handleChange}
         defaultValue={jobs[0].id}
       >
         <Tabs.List
           aria-label="Guia de Experiências Profissionais"
-          className={classNames(
-            `[--high-light:calc(${tabIndex}*48px)] max-sm:[--high-light:calc(${tabIndex}*120px)]`,
-            'flex flex-col max-sm:flex-row h-min relative',
-            'after:absolute after:left-0 after:top-0 after:w-[2px] after:h-12 after:rounded after:bg-violet-400 after:translate-y-[var(--high-light)] after:transition-transform',
-            'max-sm:after:w-[120px] max-sm:after:h-[2px] max-sm:after:bottom-0 max-sm:after:top-auto max-sm:after:translate-y-0 max-sm:after:translate-x-[var(--high-light)]',
-          )}
+          className="flex flex-col max-sm:flex-row h-min max-sm:overflow-x-auto"
         >
           {jobs.map(({ id }, index) => (
             <Tabs.Trigger
@@ -68,7 +55,7 @@ export function Jobs() {
               value={id}
               className={classNames(
                 'min-w-[120px] hover:bg-slate-300 dark:hover:bg-slate-800 hover:text-violet-500',
-                "text-left text-slate-400 px-4 py-3 border-l-[3px] border-slate-400 dark:border-slate-500 data-[state='active']:!text-violet-400 transition-colors",
+                "text-left text-slate-400 px-4 py-3 border-l-[3px] border-slate-400 dark:border-slate-500 data-[state='active']:!border-violet-400 data-[state='active']:!text-violet-400 transition-colors",
                 'max-sm:border-l-0 max-sm:border-b-[3px] max-sm:text-center',
               )}
               tabIndex={index}
