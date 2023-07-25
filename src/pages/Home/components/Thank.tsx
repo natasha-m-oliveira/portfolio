@@ -34,7 +34,7 @@ export function Thank() {
           Fowler
         </Text>
       </div>
-      <div className="mb-4 self-end">
+      <div className="flex flex-col items-end w-full">
         <Text>
           Code by
           <Text asChild className="hover:!text-violet-400">
