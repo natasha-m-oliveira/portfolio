@@ -27,7 +27,7 @@ export function Thank() {
       ref={revealContainer}
     >
       <div>
-        <Heading className="!justify-center">Obrigada pelo apaio.</Heading>
+        <Heading className="!justify-center">Obrigada pelo apoio.</Heading>
         <Text className="mt-6 max-w-md mx-auto">
           “Qualquer um pode escrever um código que o computador entenda. Bons
           programadores escrevem códigos que os humanos entendam.” – Martin
