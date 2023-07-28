@@ -45,7 +45,7 @@ export const config = {
     },
     {
       id: 'jobs',
-      name: 'Experiência',
+      name: 'Experiências',
       url: '/#jobs',
       icon: Briefcase,
     },
