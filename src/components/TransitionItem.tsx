@@ -2,20 +2,20 @@ import { ReactNode, useEffect, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { config } from '../config'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
-import { sr } from '../utils/sr'
+import { sr } from 'src/utils/sr'
 
-interface TransitionCardProps {
+type TransitionCardProps = {
   index: number
-  children: ReactNode
   timeout: number
   delay: string
+  children: ReactNode
 }
 
 export function TransitionItem({
   index,
-  children,
   timeout,
   delay,
+  children,
 }: TransitionCardProps) {
   const reveal = useRef<HTMLDivElement>(null)
 

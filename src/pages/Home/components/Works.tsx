@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { TransitionGroup } from 'react-transition-group'
-import { Heading } from '../../../components/Heading'
-import { config } from '../../../config'
-import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
-import { sr } from '../../../utils/sr'
-import { Card } from '../../../components/Card'
-import { api } from '../../../lib/axios'
-import { Button } from '../../../components/Button'
-import { TransitionItem } from '../../../components/TransitionItem'
+import { Button } from 'src/components/Button'
+import { Card } from 'src/components/Card'
+import { Heading } from 'src/components/Heading'
+import { TransitionItem } from 'src/components/TransitionItem'
+import { config } from 'src/config'
+import { usePrefersReducedMotion } from 'src/hooks/usePrefersReducedMotion'
+import { api } from 'src/lib/axios'
+import { sr } from 'src/utils/sr'
 
 const GRID_LIMIT = 6
 
-export interface Project {
+export type Project = {
   id: number
   name: string
   description: string
@@ -21,7 +21,7 @@ export interface Project {
   topics: string[]
 }
 
-interface Repositories {
+type Repositories = {
   items: Project[]
 }
 
@@ -72,7 +72,7 @@ export function Works() {
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
-              projectsToShow.map((project, i) => (
+              projectsToShow.map((project) => (
                 <div key={project.id}>
                   <Card {...project} />
                 </div>

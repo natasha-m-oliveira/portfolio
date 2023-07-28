@@ -1,8 +1,12 @@
-import { AnchorHTMLAttributes } from 'react'
+import { ComponentProps } from 'react'
 import { config } from '../config'
-import classNames from 'classnames'
+import { tv } from 'tailwind-variants'
 
-interface SocialMediaProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+const socialMedia = tv({
+  base: 'text-slate-600 dark:text-slate-200 hover:-translate-y-1 hover:!text-violet-400 transition-all',
+})
+
+type SocialMediaProps = ComponentProps<'a'> & {
   orientation?: 'right' | 'left'
 }
 
@@ -18,10 +22,7 @@ export function SocialMedia({ className, ...rest }: SocialMediaProps) {
             target="_blank"
             rel="noreferrer"
             title={name}
-            className={classNames(
-              className,
-              'text-slate-600 dark:text-slate-200 hover:-translate-y-1 hover:!text-violet-400 transition-all',
-            )}
+            className={socialMedia({ className })}
             {...rest}
           >
             <Comp size={24} />

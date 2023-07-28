@@ -1,16 +1,24 @@
 import * as Tabs from '@radix-ui/react-tabs'
-import classNames from 'classnames'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import { format } from 'date-fns'
 import { Play } from 'phosphor-react'
 import { useEffect, useRef } from 'react'
-import { Heading } from '../../../components/Heading'
-import { Text } from '../../../components/Text'
-import { sr } from '../../../utils/sr'
-import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
-import { config } from '../../../config'
-import jobs from '../../../content/jobs.json'
+import { usePrefersReducedMotion } from 'src/hooks/usePrefersReducedMotion'
+import { config } from 'src/config'
+import { sr } from 'src/utils/sr'
+import { Heading } from 'src/components/Heading'
+import jobs from 'src/content/jobs.json'
+import { Text } from 'src/components/Text'
+import { tv } from 'tailwind-variants'
+
+const tabTrigger = tv({
+  base: 'min-w-[120px] hover:bg-slate-300 dark:hover:bg-slate-800 hover:text-violet-500 text-left text-slate-400 px-4 py-3 border-l-[3px] border-slate-400 dark:border-slate-500 data-[state="active"]:!border-violet-400 data-[state="active"]:!text-violet-400 transition-colors max-sm:border-l-0 max-sm:border-b-[3px] max-sm:text-center',
+})
+
+const companyLink = tv({
+  base: 'relative after:h-[1px] after:w-0 after:absolute after:left-0 after:bottom-[1px] after:bg-violet-400 hover:after:w-full after:transition-[width]',
+})
 
 export function Jobs() {
   const revealContainer = useRef<HTMLSelectElement>(null)
@@ -53,11 +61,7 @@ export function Jobs() {
             <Tabs.Trigger
               key={`trigger_${id}`}
               value={id}
-              className={classNames(
-                'min-w-[120px] hover:bg-slate-300 dark:hover:bg-slate-800 hover:text-violet-500',
-                "text-left text-slate-400 px-4 py-3 border-l-[3px] border-slate-400 dark:border-slate-500 data-[state='active']:!border-violet-400 data-[state='active']:!text-violet-400 transition-colors",
-                'max-sm:border-l-0 max-sm:border-b-[3px] max-sm:text-center',
-              )}
+              className={tabTrigger()}
               tabIndex={index}
             >
               {id}
@@ -76,10 +80,7 @@ export function Jobs() {
                 {item.career}
                 <Text className="ml-2 !text-violet-400">
                   @
-                  <a
-                    href={item.company.link}
-                    className="relative after:h-[1px] after:w-0 after:absolute after:left-0 after:bottom-[1px] after:bg-violet-400 hover:after:w-full after:transition-[width]"
-                  >
+                  <a href={item.company.link} className={companyLink()}>
                     {item.id}
                   </a>
                 </Text>
@@ -94,7 +95,7 @@ export function Jobs() {
 
             <div className="mt-4 flex flex-col gap-2">
               {item.description.map((value) => (
-                <Text key={value} className="!gap-4">
+                <Text key={value} className="gap-4 text-justify">
                   <Play
                     size={8}
                     weight="fill"

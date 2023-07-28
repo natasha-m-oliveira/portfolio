@@ -1,5 +1,10 @@
 import { Moon, Sun } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+import { tv } from 'tailwind-variants'
+
+const switchTheme = tv({
+  base: 'text-slate-600 dark:text-slate-200 hover:!text-violet-400 transition-colors',
+})
 
 export function SwitchTheme() {
   const [theme, setTheme] = useState('')
@@ -30,10 +35,7 @@ export function SwitchTheme() {
   }, [theme])
 
   return (
-    <button
-      className="text-slate-600 dark:text-slate-200 hover:!text-violet-400 transition-colors"
-      onClick={handleChangeTheme}
-    >
+    <button className={switchTheme()} onClick={handleChangeTheme}>
       {theme === 'dark' ? (
         <Moon size={24} weight="fill" />
       ) : (

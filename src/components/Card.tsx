@@ -1,13 +1,22 @@
 import { ArrowSquareOut, FolderSimple, GithubLogo } from 'phosphor-react'
-import { Project } from '../pages/Home/components/Works'
 import { Heading } from './Heading'
 import { Text } from './Text'
+import { tv } from 'tailwind-variants'
+import { Project } from 'src/pages/Home/components/Works'
+
+const cardContainer = tv({
+  base: 'bg-slate-200 dark:bg-slate-800 aspect-square rounded px-4 py-3 flex flex-col justify-between gap-4 cursor-pointer hover:-translate-y-1 transition-transform duration-200',
+})
+
+const cardIcon = tv({
+  base: 'text-slate-500 dark:text-slate-400 hover:!text-violet-400',
+})
 
 export function Card(props: Project) {
   const topics = props.topics.filter((topic) => topic !== 'for-portfolio')
 
   return (
-    <div className="bg-slate-200 dark:bg-slate-800 aspect-square rounded px-4 py-3 flex flex-col justify-between gap-4 cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div className={cardContainer()}>
       <div>
         <div className="flex justify-between items-center">
           <FolderSimple size={40} weight="bold" className="text-violet-400" />
@@ -20,7 +29,7 @@ export function Card(props: Project) {
               <GithubLogo
                 size={24}
                 weight="bold"
-                className="text-slate-500 dark:text-slate-400 hover:!text-violet-400"
+                className={cardIcon()}
               ></GithubLogo>
             </a>
             {props.homepage && (
@@ -32,7 +41,7 @@ export function Card(props: Project) {
                 <ArrowSquareOut
                   size={24}
                   weight="bold"
-                  className="text-slate-500 dark:text-slate-400 hover:!text-violet-400"
+                  className={cardIcon()}
                 />
               </a>
             )}
@@ -52,7 +61,7 @@ export function Card(props: Project) {
           <Text
             size="sm"
             key={`${topic}_${props.id}`}
-            className="!text-slate-500"
+            className="text-slate-500"
           >
             {topic}
           </Text>

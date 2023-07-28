@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import { Button } from '../../../components/Button'
-import { Heading } from '../../../components/Heading'
-import { Text } from '../../../components/Text'
-import { config } from '../../../config'
-import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion'
-import { sr } from '../../../utils/sr'
+import { config } from 'src/config'
+import { usePrefersReducedMotion } from 'src/hooks/usePrefersReducedMotion'
+import { sr } from 'src/utils/sr'
+import { Text } from 'src/components/Text'
+import { Heading } from 'src/components/Heading'
+import { Button } from 'src/components/Button'
 
 export function Introduction() {
   const revealContainer = useRef<HTMLSelectElement>(null)

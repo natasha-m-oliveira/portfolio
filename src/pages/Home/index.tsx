@@ -1,9 +1,9 @@
-import { Header } from '../../components/Header'
 import { About } from './components/About'
 import { Jobs } from './components/Jobs'
 import { Introduction } from './components/Introduction'
 import { Works } from './components/Works'
 import { Thank } from './components/Thank'
+import { Header } from 'src/components/Header'
 
 export function Home() {
   return (
