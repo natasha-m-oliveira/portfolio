@@ -77,6 +77,14 @@ export function About() {
           <div className="w-max mt-4 grid grid-rows-3 grid-flow-col gap-x-8">
             <Text>
               <Play size={8} weight="fill" className={icon()} />
+              Go
+            </Text>
+            <Text>
+              <Play size={8} weight="fill" className={icon()} />
+              C#
+            </Text>
+            <Text>
+              <Play size={8} weight="fill" className={icon()} />
               JavaScript (ES6+)
             </Text>
             <Text>
